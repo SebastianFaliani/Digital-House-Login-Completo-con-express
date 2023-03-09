@@ -1,0 +1,39 @@
+[
+      {
+            "id": 1,
+            "firstName": "",
+            "lastName": "",
+            "email": "",
+            "password": "",
+            "avatar": "",
+            "typeOfAccess": ""
+      },
+      {
+            "id": 2,
+            "firstName": "Nestor Daniel Sebastian",
+            "lastName": "Faliani Martinez",
+            "email": "nedase@gmail.com",
+            "password": "123456",
+            "avatar": "1678282797748_avatar.png",
+            "typeOfAccess": "user",
+            "tel": "",
+            "address": "",
+            "postal_code": "",
+            "province": "",
+            "city": ""
+      },
+      {
+            "id": 3,
+            "firstName": "Cristina Elizabeth",
+            "lastName": "Cardenas Ayala",
+            "email": "crielyz@hotmail.com",
+            "password": "123456",
+            "avatar": "1678374138669_avatar.png",
+            "typeOfAccess": "user",
+            "tel": "",
+            "address": "",
+            "postal_code": "",
+            "province": "",
+            "city": ""
+      }
+]
