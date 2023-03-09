@@ -8,15 +8,23 @@ module.exports = {
       },
       processLogin: (req, res) => {
             const errors = validationResult(req);
+
             if (errors.isEmpty()) {
                   let user = dbUsers.find((user) => user.email === req.body.email);
                   req.session.user = {
+                        id: user.id,
                         name: user.firstName,
                         avatar: user.avatar,
                         typeOfAccess: user.typeOfAccess,
                   };
                   /* Se le asigna la session a local para que lo pueda ver des las vistas ejs */
                   res.locals.user = req.session.user;
+
+                  if (req.body.remember) {
+                        //*********Guarar Cookie con tiempo de expiracion 1 hora************
+                        let duracionSesion = new Date(Date.now() + 90000);
+                        res.cookie("user", req.session.user, { expires: duracionSesion, httpOnly: true });
+                  }
 
                   return res.redirect("/");
             }
@@ -25,6 +33,14 @@ module.exports = {
                   old: req.body,
                   session: req.session,
             });
+      },
+      logout: (req, res) => {
+            req.session.destroy();
+            if (req.cookies.user) {
+                  //Elimina la cookies poniendo tiempo de expiracion -1
+                  res.cookie("user", "", { maxAge: -1 });
+            }
+            return res.redirect("/");
       },
       register: (req, res) => {
             return res.render("users/register", { session: req.session });
@@ -50,7 +66,7 @@ module.exports = {
                   };
                   dbUsers.push(newUser);
                   writeJSON("users.json", dbUsers);
-                  return res.redirect("/");
+                  return res.redirect("/users/login");
             } else {
                   res.render("users/register", {
                         errors: errors.mapped(),

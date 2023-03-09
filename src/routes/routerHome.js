@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const controllersHome = require("../controllers/controllersHome");
+const cookieCheck = require("../middlewares/cookieCheck");
 
-router.get("/", controllersHome.index);
+router.get("/", cookieCheck, controllersHome.index);
 
 module.exports = router;

@@ -3,6 +3,7 @@ const app = express();
 const PORT = 3001;
 const methodOverride = require("method-override"); // Para poder usar los métodos PUT y DELETE
 const session = require("express-session");
+const cookieParser = require("cookie-parser");
 
 app.use(express.static("public"));
 
@@ -17,6 +18,7 @@ app.use(
             saveUninitialized: true,
       })
 );
+app.use(cookieParser());
 
 /*  Template Engine */
 /* Necesario para usar los templates antes instalar npm i  ejs */
