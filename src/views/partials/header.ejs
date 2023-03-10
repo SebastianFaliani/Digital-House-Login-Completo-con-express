@@ -12,13 +12,13 @@
                   <!-- Collapsible wrapper -->
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Navbar brand -->
-                        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                        <a class="navbar-brand mt-2 mt-lg-0" href="/">
                               <img src="/images/node.webp" height="45" alt="MDB Logo" loading="lazy" />
                         </a>
                         <!-- Left links -->
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                               <li class="nav-item">
-                                    <a class="nav-link" href="/">Home</a>
+                                    <a class="nav-link" href="#">Home</a>
                               </li>
                               <li class="nav-item">
                                     <a class="nav-link" href="#">Link 1</a>
@@ -39,16 +39,17 @@
                               <div class="dropdown">
                                     <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
                                           role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                                          <img src="/images/avatar/<%= session.user.avatar %>" class="rounded-circle" height="25"
+                                          <img src="/images/avatar/<%= session.user.avatar %>" class="rounded-circle" height="30" width="30"
                                                 alt="Black and White Portrait of a Man" loading="lazy" />
                                           </i><span class="session"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                                           <li>
-                                                <a class="dropdown-item" href="#">My profile</a>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i> My profile</a>
                                           </li>
                                           <li>
-                                                <a class="dropdown-item" href="/users/logout">Logout</a>
+                                                <a class="dropdown-item" href="/users/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                                      Logout</a>
                                           </li>
                                     </ul>
                               </div>

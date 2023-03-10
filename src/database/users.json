@@ -1,39 +1,30 @@
 [
-      {
-            "id": 1,
-            "firstName": "",
-            "lastName": "",
-            "email": "",
-            "password": "",
-            "avatar": "",
-            "typeOfAccess": ""
-      },
-      {
-            "id": 2,
-            "firstName": "Nestor Daniel Sebastian",
-            "lastName": "Faliani Martinez",
-            "email": "nedase@gmail.com",
-            "password": "123456",
-            "avatar": "1678282797748_avatar.png",
-            "typeOfAccess": "user",
-            "tel": "",
-            "address": "",
-            "postal_code": "",
-            "province": "",
-            "city": ""
-      },
-      {
-            "id": 3,
-            "firstName": "Cristina Elizabeth",
-            "lastName": "Cardenas Ayala",
-            "email": "crielyz@hotmail.com",
-            "password": "123456",
-            "avatar": "1678374138669_avatar.png",
-            "typeOfAccess": "user",
-            "tel": "",
-            "address": "",
-            "postal_code": "",
-            "province": "",
-            "city": ""
-      }
+   {
+      "id": 1,
+      "firstName": "Nestor Daniel Sebastian",
+      "lastName": "Faliani Martinez",
+      "email": "nedase@gmail.com",
+      "password": "$2a$12$FlhKrjCn34OPtQ/rDLayheAEM0jIocU0sc49xfrS3dNEwLhfpN3V6",
+      "avatar": "1678397879942_avatar.png",
+      "typeOfAccess": "user",
+      "tel": "",
+      "address": "",
+      "postal_code": "",
+      "province": "",
+      "city": ""
+   },
+   {
+      "id": 1,
+      "firstName": "Cristina Elizabeth",
+      "lastName": "Cardenas Ayala",
+      "email": "crielyz@hotmail.com",
+      "password": "$2a$12$EgjjPMzLxsY6vkrBsTO.kuqMqlXcBxss6FE1d/b.aiK0p9AmDqKRq",
+      "avatar": "defauld.png",
+      "typeOfAccess": "user",
+      "tel": "",
+      "address": "",
+      "postal_code": "",
+      "province": "",
+      "city": ""
+   }
 ]

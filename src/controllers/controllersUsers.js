@@ -1,5 +1,6 @@
 const { readJSON, writeJSON } = require("../database");
 const { validationResult } = require("express-validator");
+const bcryptjs = require("bcryptjs");
 
 const dbUsers = readJSON("users.json");
 module.exports = {
@@ -49,13 +50,18 @@ module.exports = {
             const errors = validationResult(req);
 
             if (errors.isEmpty()) {
-                  let lastId = dbUsers[dbUsers.length - 1].id;
+                  let lastId;
+                  if (dbUsers) {
+                        lastId = 0;
+                  } else {
+                        lastId = dbUsers[dbUsers.length - 1].id;
+                  }
                   let newUser = {
                         id: lastId + 1,
                         firstName: req.body.firstName,
                         lastName: req.body.lastName,
                         email: req.body.email,
-                        password: req.body.password,
+                        password: bcryptjs.hashSync(req.body.password, 12),
                         avatar: req.file ? req.file.filename : "defauld.png",
                         typeOfAccess: "user",
                         tel: "",

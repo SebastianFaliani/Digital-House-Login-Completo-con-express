@@ -1,6 +1,6 @@
 const { check, body } = require("express-validator");
-const path = require("path");
 const { readJSON } = require("../database");
+const bcryptjs = require("bcryptjs");
 
 const users = readJSON("users.json");
 module.exports = [
@@ -17,7 +17,7 @@ module.exports = [
       body("password")
             .custom((value, { req }) => {
                   let user = users.find((user) => user.email === req.body.email);
-                  return user.password === value;
+                  return bcryptjs.compareSync(value, user.password);
             })
             .withMessage("Usuario o contraseña invalida"),
       //check("recordar").isString("on").withMessage("Debes aceptar los términos y condiciones"),
