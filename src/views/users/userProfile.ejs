@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sp">
+<%- include('../partials/head')%>
+
+      <body>
+            <%- include('../partials/header')%>
+                  <main class="userProfile d-flex">
+
+                        <div class="avatar mx-4">
+                              <img src="/images/avatar/<%= user.avatar %>" alt="" class="rounded-circle" height="150" width="150">
+                        </div>
+                        <div class="userProfile-container">
+                              <div class="userProfile_box">
+                                    <h3 class="userProfile_title">Datos personales</h3>
+                                    <p class="userProfile_item">Nombre: <%= user.firstName %>
+                                    </p>
+                                    <p class="userProfile_item">Nombre: <%= user.lastName %>
+                                    </p>
+                                    <p class="userProfile_item">Email: <%= user.email %>
+                                    </p>
+                                    <p class="userProfile_item">Teléfono: <%= user.tel ? user.tel : "------" %>
+                                    </p>
+                              </div>
+                              <div class="userProfile_box">
+                                    <h3 class="userProfile_title">Datos de contacto</h3>
+                                    <p class="userProfile_item">Dirección: <%= user.address ? user.address : "------" %>></p>
+                                    <p class="userProfile_item">Código postal: <%= user.postal_code ? user.postal_code : "------" %>
+                                    </p>
+                                    <p class="userProfile_item">Provincia: <%= user.province ? user.province : "------" %>
+                                    </p>
+                                    <p class="userProfile_item">Localidad: <%= user.city ? user.city : "------" %>
+                                    </p>
+                              </div>
+                              <a href="/users/profile/edit/" class="btn btn-submit btn-info text-white w-100 mt-2">Editar datos</a>
+                        </div>
+                  </main>
+                  <%- include('../partials/scripts')%>
+      </body>
+
+</html>

@@ -3,7 +3,7 @@ module.exports = {
             return res.render("products/products", { session: req.session });
       },
       details: (req, res) => {
-            return res.render("products/details", { session: req.session });
+            return res.render("products/productsDetails", { session: req.session });
       },
       ofertas: (req, res) => {
             return res.send("Ofertas");
